@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
+
+<style>
+    .coba {
+        background-color: red;
+        padding: 20px;
+    }
+</style>
+
 <body>
-    <p>coba text to speech</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar adalah blablabal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">fakultas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">prodi</a>
+                </li>
 
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        let utterance = new SpeechSynthesisUtterance(
-            `coba kata kata`
-        );
-        utterance.volume = 1;   // 0.1 sampai 1
-        utterance.rate = 3;     // 0.1 sampai 10
-        utterance.pitch = 2;    // 0 sampai 2s
-        utterance.lang = 'id-ID';
-        utterance.rate = .8
-        window.speechSynthesis.speak(utterance);
-        utterance.onend = voiceEndCallback;
+        $("a").mouseenter(function() {
 
+
+            let utterance = new SpeechSynthesisUtterance(
+                $(this).html()
+            );
+            utterance.volume = 11; // 0.1 sampai 1
+            utterance.rate = 10; // 0.1 sampai 10
+            utterance.pitch = 1;
+            utterance.lang = 'id-ID';
+            utterance.rate = .90
+            window.speechSynthesis.speak(utterance);
+
+        })
+
+
+
+        //
     </script>
 </body>
+
 </html>
